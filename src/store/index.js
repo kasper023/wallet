@@ -4,7 +4,7 @@ import axios from 'axios'
 
 Vue.use(Vuex)
 
-const TOKEN = '08d4162cbdd046fdaa35f040b52ad561'
+const TOKEN = 'c20dc32d01d44c61afd9ab7f44db4246'
 const URL = 'https://api.blockcypher.com/v1/btc/main'
 
 const getLocalWallets = async (commit, state) => {

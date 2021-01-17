@@ -19,6 +19,11 @@
           Delete
         </v-btn>
       </v-card>
+      <v-pagination
+      v-model="page"
+      :length="Math.ceil(addresses.length / 4)"
+      @input="next"
+    ></v-pagination>
     </v-container>
     <NewAddress :isActive="isNewAddress" @close="isNewAddress=''"/>
   </div>
@@ -33,7 +38,8 @@ export default {
   },
   data () {
     return {
-      isNewAddress: ''
+      isNewAddress: '',
+      page: 1
     }
   },
   async created () {
@@ -58,6 +64,9 @@ export default {
         address: address
       }
       this.$store.dispatch('deleteAddress', { wallet })
+    },
+    next (page) {
+      console.log(page)
     }
   }
 }
